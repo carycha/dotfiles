@@ -19,6 +19,12 @@ case $(uname -s) in
         ;;
 esac
 
+# syntax highlight with cat command
+# pip install Pygments
+if type pygmentize >/dev/null 2>&1; then
+    alias ccat='pygmentize -O style=monokai -f console256 -g'
+fi
+
 alias tmux="tmux -2"
 alias today="date '+%Y%m%d'"
 alias h='history'
@@ -31,4 +37,6 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias findswp="find . -name '*.swp'"
 alias delswp="findswp; find . -name '*.swp' | xargs rm"
-alias composer='php -d allow_url_fopen=On -d apc.enable_cli=off /usr/local/bin/composer'
+alias composer='php -d allow_url_fopen=On -d apc.enable_cli=off ~/bin/composer.phar'
+# show mount list on docker container, usage: show-docker-mount <container_id> | jq .
+alias show-docker-mount="docker inspect -f '{{ json .Mounts }}'"
