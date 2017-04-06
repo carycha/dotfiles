@@ -17,7 +17,7 @@ export EDITOR="vim"
 export PAGER="less"
 export GIT_PAGER="less"
 export DEBFULLNAME="Carycha"
-export DEBEMAIL="carycha9@gmail.com"
+export DEBEMAIL="carycha@pixnet.tw"
 export GREP_COLOR="1;33"
 export HISTTIMEFORMAT="%Y/%m/%d %T "
 
