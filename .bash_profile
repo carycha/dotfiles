@@ -16,4 +16,6 @@ if [ -d "$HOME/.composer/vendor/bin" ] ; then
     PATH="$HOME/.composer/vendor/bin:$PATH"
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+if [ -x "$(command -v brew)" ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion
+fi
